@@ -41,4 +41,5 @@ def main(filename):
 
 
 if __name__ == '__main__':
-    main("Tests/test1.txt")
+    filename = input('Input filename relative to project root folder:')
+    main(filename)
