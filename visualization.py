@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 
 
 def visualizeWeightedTree(filename):
+    """
+    Create file "outdrrawing.txt", containing an ascii representation of phylogenetic tree.
+    :param filename: name of file containing the tree in Newick format
+    """
     tree = Phylo.read(filename, "newick")
 
     fig = plt.figure(figsize=(13, 5), dpi=100)
