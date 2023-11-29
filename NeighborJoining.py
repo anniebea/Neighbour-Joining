@@ -134,11 +134,16 @@ def NJ(popNames, data):
     with open("outtree.txt", 'w') as f:
         f.write(phyOutput)
 
-    visualizeWeightedTree("outtree.txt")
     produceOutfile(ogNames, disList)
 
 
 def convertToOneLine(distances, number):
+    """
+    Return a Newick format phylogenetic tree representation.
+    :param distances: list of distances between nodes
+    :param number: number of non-leaf nodes in tree
+    :return: phylogenetic tree in Newick format
+    """
     fragments = []
     for i in range(1, number):
         for pop1 in distances:
@@ -170,6 +175,12 @@ def prettyPrintDistanceList(distances):
 
 
 def produceOutfile(populations, distances):
+    """
+    Create file "outfile.txt" based on PHYLIP
+    :param populations: number of populations
+    :param distances: list of distances in tree
+    """
+    visualizeWeightedTree("outtree.txt")
     with open("outdrawing.txt", "r") as f:
         lines = f.readlines()
     with open("outfile.txt", "w") as f:
